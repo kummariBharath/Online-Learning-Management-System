@@ -30,12 +30,13 @@ SECRET_KEY = 'django-insecure-&dgr^x)^#^jnys&p9g7djz&vd$1##vz3(c@1fbb3!c6yd^#f-#
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["skillmate.up.railway.app", "127.0.0.1", "localhost"]
+ALLOWED_HOSTS = [".up.railway.app", "127.0.0.1", "localhost"]
 
-CSRF_TRUSTED_ORIGINS = ['https://skillmate.up.railway.app']
+CSRF_TRUSTED_ORIGINS = ['https://*.up.railway.app']
 
 CORS_ORIGIN_WHITELIST = [
-'https://skillmate.up.railway.app'
+    'https://skillmate.up.railway.app',
+    'https://online-learning-management-system-production.up.railway.app'
 ]
 
 CORS_ORIGIN_ALLOW_ALL = True
