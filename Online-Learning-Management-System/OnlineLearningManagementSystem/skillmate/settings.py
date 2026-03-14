@@ -117,22 +117,14 @@ SOCIALACCOUNT_PROVIDERS = {
 }
 
 
-#django-allauth registraion settings
-ACCOUNT_EMAIL_CONFIRMATION_EXPIRE_DAYS =1
-ACCOUNT_EMAIL_REQUIRED = True
+# Django-allauth registration settings
+ACCOUNT_EMAIL_CONFIRMATION_EXPIRE_DAYS = 1
+ACCOUNT_SIGNUP_FIELDS = ['email*', 'username*', 'password1*', 'password2*']
 # ACCOUNT_EMAIL_VERIFICATION = "mandatory"
-ACCOUNT_LOGIN_ATTEMPTS_LIMIT = 5
-  
-# 1 day
-ACCOUNT_LOGIN_ATTEMPTS_TIMEOUT = 86400 
-  
-#or any other page
-ACCOUNT_LOGOUT_REDIRECT_URL ='/accounts/login/' 
+ACCOUNT_RATE_LIMITS = {'login_failed': '5/86400s'}
 
-# ACCOUNT_EMAIL_VERIFICATION = "none"
-
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-
+# Redirect URLs
+ACCOUNT_LOGOUT_REDIRECT_URL = '/accounts/login/'
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
 
@@ -206,12 +198,12 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'bharathkummari010@gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_PASSWORD = 'pjcw jfwb rdhr zzmm' 
+EMAIL_HOST_PASSWORD = 'pjcw jfwb rdhr zzmm'
 
 # Cloudinary Django Integration
 
-cloudinary.config (
-    cloud_name = 'dw7whhgws',
-    api_key = '277146194325425',
-    api_secret = 'Z4Y0f8yvo7lRkK2Is1yaOLcJJeo',
+cloudinary.config(
+    cloud_name='dw7whhgws',
+    api_key='277146194325425',
+    api_secret='Z4Y0f8yvo7lRkK2Is1yaOLcJJeo',
 )
